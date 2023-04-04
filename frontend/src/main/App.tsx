@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../movieLogo1.jpeg";
 import "./App.css";
 import Header from "../Header";
+import MovieList from "../movie/MovieList";
 
 function App() {
   return (
@@ -9,18 +10,9 @@ function App() {
       <header className="App-header">
         <Header />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+
+      <MovieList />
     </div>
   );
 }
