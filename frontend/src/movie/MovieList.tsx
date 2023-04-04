@@ -4,6 +4,7 @@ import { Movie } from "../types/movie";
 function MovieList() {
   const [movieData, setMovieData] = useState<Movie[]>([]);
 
+  // This is the useEffect method
   useEffect(() => {
     const fetchMovie = async () => {
       const rsp = await fetch("https://localhost:4000/movie");
@@ -13,7 +14,10 @@ function MovieList() {
     fetchMovie();
   }, []);
 
+  // This is filtering the data to jus include the edited films
   const filteredMovies = movieData.filter((m) => m.edited === "Yes");
+
+  //This is sorting the filtered data to be alphabetized by title name
   filteredMovies.sort((a, b) => a.title.localeCompare(b.title));
 
   return (
